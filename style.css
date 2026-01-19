@@ -1,0 +1,193 @@
+:root{
+    --color-blue: rgb(88, 135, 209);
+    --color-white: white;
+    --color-pink: rgb(254, 19, 254);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color: var(--color-blue);
+    height: 100vh;
+    position: relative;
+}
+.header-container{
+    width: 100%;
+    background-color: var(--color-pink);
+    padding: 20px;
+    display: flex;
+    justify-content: end;
+    font-family: sans-serif;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+.newbook{
+    border: none;
+    padding: 10px 20px;
+    background-color: var(--color-blue);
+    color: white;
+    border-radius: 10px;
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+.newbook:hover{
+transform: scale(1.1);
+background-color: rgb(44, 103, 230);
+}
+dialog{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding:40px 40px;
+    border-radius: 10px;
+    height: 550px;
+}
+
+::backdrop{
+      backdrop-filter: blur(2px);
+      background-color: rgba(66, 128, 228, 0.36);
+    }
+form > div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+input[type="text"],
+input[type="number"]{
+    height: 25px;
+    width: clamp(190px, 20%, 250px);
+    padding: 5px;
+}
+input[type="text"]:invalid,
+input[type="number"]:invalid{
+    border: 1px solid red;
+    outline: none;
+}
+input[type="text"]:focus,
+input[type="number"]:focus{
+    border: 2px solid var(--color-blue);
+    outline: none;
+}
+input[type="text"]:active,
+input[type="number"]:active{
+    border: 1px solid var(--color-blue);
+}
+input[type="checkbox"]{
+  appearance: none;
+  width: 1.3em;
+  height: 1.3em;
+  border: 2px solid black;
+  border-radius: 4px;
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background-color 0.12s, border-color 0.12s;
+  background-color: transparent;
+}
+input[type="checkbox"]::after{
+  content: "";
+  width: 0.6em;
+  height: 0.35em;
+  background-color: var(--color-blue);
+  display: none;
+  clip-path: polygon(0% 40%, 35% 75%, 100% 0%, 90% 0%, 35% 60%, 10% 35%);
+}
+input[type="checkbox"]:checked{
+  background: var(--color-white);
+  border-color: var(--color-blue);
+}
+input[type="checkbox"]:checked::after{
+  display: block;
+}
+input[type="checkbox"]:focus-visible{
+  outline: 3px solid rgba(88, 135, 209, 0.3);
+  outline-offset: 3px;
+}
+input[type="checkbox"]:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+form > .read{
+    display: flex;
+    flex-direction: row;
+   
+} 
+
+.submit{
+    border: none;
+    height: 30px;
+    width: 150px;
+    background-color: var(--color-pink);
+    border-radius: 7px; 
+    transition: 0.3s ease-in-out;  
+}
+.submit:hover{
+    background-color: rgb(231, 46, 172);
+    transform: scale(1.1);
+
+}
+.close{
+    height: 30px;
+    width: 50px;
+     border: none;
+      background-color: var(--color-blue);
+    border-radius: 7px; 
+    transition: 0.3s ease-in-out;  
+
+}
+.close:hover{
+  background-color: rgb(49, 49, 188);
+    transform: scale(1.1);
+}
+.btn{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.book-container{
+position: fixed;
+top: 30%;
+left: 30%;
+transform: translate(-30%, -30%);
+display: flex;flex-wrap: wrap;
+gap: 20px;
+}
+.card{
+    background-color: var(--color-pink);
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+}
+.btncontainer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+.readbtn{
+    background-color: rgb(71, 211, 108);
+}
+.notreadbtn{
+    background-color: rgb(222, 89, 89);
+}
+.removebtn{
+    height: 40px;
+    width: 200px;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--color-blue);
+}
+.readbtn{
+    height: 40px;
+    width: 200px;
+    border: none;
+    border-radius: 7px; 
+}
