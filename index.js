@@ -71,17 +71,20 @@ myLibrary.forEach((book) => {
       readbtn.classList.add("readbtn");
     }else{
       readbtn.textContent = "Not read"
+       readbtn.classList.remove("readbtn");
        readbtn.classList.add("notreadbtn");
     }
 
-    
+
     readbtn.addEventListener("click", () => {
       if(readbtn.textContent === "Read"){
       readbtn.textContent = "Not read";
       readbtn.classList.add("notreadbtn");
+      readbtn.classList.remove("readbtn")
     }else{
       readbtn.textContent = "Read";
       readbtn.classList.remove("notreadbtn");
+      readbtn.classList.add("readbtn")
     }
     })
 
