@@ -18,7 +18,7 @@
 }
 .container{
     background-color: var(--color-blue);
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
   font-family: "Google Sans", sans-serif;
   font-size: 18px;
@@ -27,6 +27,7 @@
 .header-container{
     width: 100%;
     background-color: var(--color-pink);
+    position: sticky;
     padding: 20px;
     display: flex;
     justify-content: end;
