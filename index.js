@@ -58,6 +58,7 @@ myLibrary.forEach((book) => {
     btncontainer.classList.add("btncontainer");
     removebtn.classList.add("removebtn");
     readbtn.classList.add("readbtn");
+    title.classList.add("title")
 
     removebtn.textContent = "Remove";
     readbtn.textContent = "Read"
