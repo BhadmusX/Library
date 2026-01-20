@@ -74,6 +74,17 @@ myLibrary.forEach((book) => {
        readbtn.classList.add("notreadbtn");
     }
 
+    
+    readbtn.addEventListener("click", () => {
+      if(readbtn.textContent === "Read"){
+      readbtn.textContent = "Not read";
+      readbtn.classList.add("notreadbtn");
+    }else{
+      readbtn.textContent = "Read";
+      readbtn.classList.remove("notreadbtn");
+    }
+    })
+
     bookcontainer.appendChild(card);
     card.appendChild(title);
     card.appendChild(author);
