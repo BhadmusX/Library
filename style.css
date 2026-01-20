@@ -28,6 +28,7 @@
     width: 100%;
     background-color: var(--color-pink);
     position: sticky;
+    top: 0;
     padding: 20px;
     display: flex;
     justify-content: end;
