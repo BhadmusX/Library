@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 :root{
-    --color-blue: rgb(88, 135, 209);
+    --color-ash: #D3DAD9;
     --color-white: white;
-    --color-pink: rgb(254, 19, 254);
+    --color-dark-brown: #715A5A;
     --color-light-green: rgb(71, 211, 108);
     --color-light-red: rgb(222, 89, 89);
-    --color-hover-pink: rgb(171, 8, 171);
-    --color-hover-blue: rgb(44, 103, 230);
+    --color-hover-ash: #44444E;
     --color-hover-green: rgb(14, 127, 44);
     --color-hover-red: rgb(151, 19, 19);
 
@@ -17,7 +16,7 @@
     box-sizing: border-box;
 }
 .container{
-    background-color: var(--color-blue);
+    background-color: var(--color-ash);
     min-height: 100vh;
     position: relative;
   font-family: "Google Sans", sans-serif;
@@ -26,7 +25,7 @@
 }
 .header-container{
     width: 100%;
-    background-color: var(--color-pink);
+    background-color: var(--color-dark-brown);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -39,16 +38,17 @@
 .newbook{
     border: none;
     padding: 10px 20px;
-    background-color: var(--color-blue);
+    background-color: var(--color-ash);
     color: white;
     border-radius: 10px;
     font-size: clamp(0.9rem, 3vw, 1.3rem);
     font-weight: bold;
-    transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out; 
+    color: var(--color-dark-brown);      
 }
 .newbook:hover{
 transform: scale(1.1);
-background-color: var(--color-hover-blue);
+background-color: var(--color-hover-ash);
 }
 dialog{
     position: fixed;
@@ -63,7 +63,7 @@ dialog{
 
 ::backdrop{
       backdrop-filter: blur(2px);
-      background-color: rgba(66, 128, 228, 0.36);
+      background-color: #d3dad95d;
     }
 form > div{
     display: flex;
@@ -74,23 +74,30 @@ form > div{
 }
 input[type="text"],
 input[type="number"]{
-    height: 25px;
-    width: clamp(190px, 20%, 250px);
+    height: 30px;
+    width: clamp(220px, 20%, 250px);
     padding: 5px;
 }
 input[type="text"]:invalid,
 input[type="number"]:invalid{
     border: 1px solid red;
+    border-radius: 4px;
     outline: none;
+}
+input::placeholder{
+    font-weight: bold;
+    font-size: 15px;
+    color: var(--color-ash);
+
 }
 input[type="text"]:focus,
 input[type="number"]:focus{
-    border: 2px solid var(--color-blue);
+    border: 2px solid var(--color-dark-brown);
     outline: none;
 }
 input[type="text"]:active,
 input[type="number"]:active{
-    border: 1px solid var(--color-blue);
+    border: 1px solid var(--color-dark-brown);
 }
 input[type="checkbox"]{
   appearance: none;
@@ -108,13 +115,13 @@ input[type="checkbox"]::after{
   content: "";
   width: 0.6em;
   height: 0.35em;
-  background-color: var(--color-blue);
+  background-color: var(--color-dark-brown);
   display: none;
   clip-path: polygon(0% 40%, 35% 75%, 100% 0%, 90% 0%, 35% 60%, 10% 35%);
 }
 input[type="checkbox"]:checked{
   background: var(--color-white);
-  border-color: var(--color-blue);
+  border-color: var(--color-dark-brown);
 }
 input[type="checkbox"]:checked::after{
   display: block;
@@ -135,31 +142,33 @@ form > .read{
 
 .submit{
     border: none;
-    height: 30px;
-    width: 150px;
-    background-color: var(--color-pink);
+    height: 40px;
+    width: 160px;
+    background-color: var(--color-dark-brown);
     border-radius: 7px; 
     transition: 0.3s ease-in-out;
   font-size: clamp(18px, 3vw, 20px);
-    font-weight: bold; 
+    font-weight: bold;
+    color: var(--color-ash); 
 }
 .submit:hover{
-    background-color: var(--color-hover-pink);
+    background-color: var(--color-hover-ash);
     transform: scale(1.1);
 
 }
 .close{
-    height: 30px;
-    width: 50px;
+    height: 40px;
+    width: 70px;
      border: none;
-      background-color: var(--color-blue);
+      background-color: var(--color-dark-brown);
     border-radius: 7px; 
     transition: 0.3s ease-in-out;  
       font-size: clamp(15px, 3vw, 16px);
     font-weight: bold; 
+    color: var(--color-ash);
 }
 .close:hover{
-  background-color: rgb(49, 49, 188);
+  background-color: var(--color-hover-ash);
     transform: scale(1.1);
 }
 .btn{
@@ -176,7 +185,7 @@ padding: 30px;
 justify-content: center;
 }
 .card{
-    background-color: var(--color-pink);
+    background-color: var(--color-ash);
     padding: 20px;
     border-radius: 7px;
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -209,7 +218,7 @@ justify-content: center;
     width: 200px;
     border: none;
     border-radius: 7px;
-    background-color: var(--color-blue);
+    background-color: var(--color-dark-brown);
      font-size: 18px;
     font-weight: bold; 
     cursor: pointer;
@@ -217,7 +226,7 @@ justify-content: center;
 }
 .removebtn:hover{
 transform: scale(1.1);
-background-color: var(--color-hover-blue);
+background-color: var(--color-hover-ash);
 }
 .readbtn{
     height: 40px;
