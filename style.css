@@ -31,9 +31,12 @@
     z-index: 100;
     padding: 20px;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    align-items: center;
     font-family: sans-serif;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+    flex-direction: row-reverse;
+    
 }
 .newbook{
     border: none;
@@ -41,7 +44,7 @@
     background-color: var(--color-ash);
     color: white;
     border-radius: 10px;
-    font-size: clamp(0.9rem, 3vw, 1.3rem);
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
     font-weight: bold;
     transition: 0.3s ease-in-out; 
     color: var(--color-dark-brown);      
@@ -49,6 +52,11 @@
 .newbook:hover{
 transform: scale(1.1);
 background-color: var(--color-hover-ash);
+}
+.mylib{
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    font-weight: bold;
+    color: var(--color-ash);
 }
 dialog{
     position: fixed;
@@ -227,6 +235,7 @@ justify-content: center;
 .removebtn:hover{
 transform: scale(1.1);
 background-color: var(--color-hover-ash);
+color: var(--color-dark-brown);
 }
 .readbtn{
     height: 40px;

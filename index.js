@@ -1,4 +1,5 @@
 const newBook = document.createElement("button");
+const mylib = document.createElement("p");
 const container =  document.querySelector(".header-container");
 const dialog = document.querySelector("dialog")
 const bookform = document.querySelector("#book-form")
@@ -102,6 +103,10 @@ myLibrary.forEach((book) => {
 newBook.textContent = "New Book";
 newBook.classList.add("newbook")
 container.appendChild(newBook);
+
+mylib.textContent = "My Library";
+mylib.classList.add("mylib");
+container.appendChild(mylib)
 
 newBook.addEventListener("click", () => {
   dialog.showModal()
