@@ -56,8 +56,13 @@ myLibrary.forEach((book) => {
   const readbtn  =  document.createElement("button");
 
     card.classList.add('card');
+    card.dataset.bookId = book.id;
+
     btncontainer.classList.add("btncontainer");
     removebtn.classList.add("removebtn");
+    removebtn.dataset.bookId = book.id;
+
+
     readbtn.classList.add("readbtn");
     title.classList.add("title")
 
@@ -78,6 +83,8 @@ myLibrary.forEach((book) => {
 
 
     readbtn.addEventListener("click", () => {
+      book.isread = !book.isread;
+
       if(readbtn.textContent === "Read"){
       readbtn.textContent = "Not read";
       readbtn.classList.add("notreadbtn");
@@ -89,6 +96,12 @@ myLibrary.forEach((book) => {
     }
     })
 
+    removebtn.addEventListener("click", () => {
+      const bookId = removebtn.dataset.bookId;
+      removebook(bookId);
+    });
+ 
+  
     bookcontainer.appendChild(card);
     card.appendChild(title);
     card.appendChild(author);
@@ -98,6 +111,14 @@ myLibrary.forEach((book) => {
     card.appendChild(btncontainer);
 
 })
+}
+
+function removebook(bookId) {
+const index = myLibrary.findIndex(book => book.id === bookId);
+if(index > -1){
+  myLibrary.splice(index, 1);
+  displaybooks();
+}
 }
 
 newBook.textContent = "New Book";
