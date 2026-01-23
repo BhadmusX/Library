@@ -25,11 +25,26 @@ function addBookToLibrary(title, author, pages, isread) {
 
 bookform.addEventListener("submit", (event) => {
 
+  const titleInput = document.querySelector("#title");
+  const authorInput = document.querySelector("#author");
+
+  if (titleInput.value.trim() === "") {
+    titleInput.setCustomValidity("Please enter the name of the book!");
+  } else {
+    titleInput.setCustomValidity("");
+  }
+
+  if (!bookform.checkValidity()) {
+    bookform.reportValidity(); 
+    event.preventDefault();
+    return;
+  }
+
   event.preventDefault();
 
-  const title = document.querySelector("#title").value;
-  const author =  document.querySelector("#author").value;
-  const pages = document.querySelector("#pages").value;
+  const title = document.querySelector("#title").value.trim();
+  const author =  document.querySelector("#author").value.trim();
+  const pages = document.querySelector("#pages").value.trim();
   const isread = document.querySelector("#read").checked;
 
   addBookToLibrary(title, author, pages, isread);
@@ -37,8 +52,9 @@ bookform.addEventListener("submit", (event) => {
   displaybooks();
 
   bookform.reset();
-});
 
+  dialog.close();
+});
 
 
 function displaybooks() {
@@ -61,6 +77,10 @@ myLibrary.forEach((book) => {
     btncontainer.classList.add("btncontainer");
     removebtn.classList.add("removebtn");
     removebtn.dataset.bookId = book.id;
+
+    removebtn.addEventListener("click", () => {
+    removebook(book.id);
+});
 
 
     readbtn.classList.add("readbtn");
@@ -96,11 +116,7 @@ myLibrary.forEach((book) => {
     }
     })
 
-    removebtn.addEventListener("click", () => {
-      const bookId = removebtn.dataset.bookId;
-      removebook(bookId);
-    });
- 
+
   
     bookcontainer.appendChild(card);
     card.appendChild(title);
@@ -133,9 +149,7 @@ newBook.addEventListener("click", () => {
   dialog.showModal()
 });
 
-submit.addEventListener("click", () => {
-  dialog.close();
-});
+
 close.addEventListener("click", () => {
   dialog.close();
 } )
